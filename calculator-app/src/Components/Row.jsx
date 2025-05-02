@@ -1,6 +1,8 @@
-const Row = ({ value, sign, enabled, onChange, onRemove }) => {
+import "./Row.css";
+
+const Row = ({ id, value, sign, enabled, onChange, onRemove }) => {
   return (
-    <div className={`row ${!enabled ? "disabled" : ""}`}>
+    <div className={`row ${!enabled ? "disabled" : ""}`} data-row-id={id}>
       <select
         value={sign}
         onChange={(e) => onChange({ sign: e.target.value })}
